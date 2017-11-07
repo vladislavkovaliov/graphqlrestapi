@@ -1,0 +1,372 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'winston',
+1 verbose cli   'express-winston' ]
+2 info using npm@1.4.21
+3 info using node@v4.6.1
+4 warn package.json graphqlrestapi@1.0.0 No description
+5 warn package.json graphqlrestapi@1.0.0 No repository field.
+6 warn package.json graphqlrestapi@1.0.0 No README data
+7 warn package.json browser-resolve@1.11.2 No README data
+8 warn package.json estraverse@4.2.0 No README data
+9 warn package.json expect@21.2.1 No description
+10 warn package.json expect@21.2.1 No README data
+11 warn package.json jest-config@21.2.1 No description
+12 warn package.json jest-config@21.2.1 No README data
+13 warn package.json jest-diff@21.2.1 No description
+14 warn package.json jest-diff@21.2.1 No README data
+15 warn package.json jest-environment-jsdom@21.2.1 No description
+16 warn package.json jest-environment-jsdom@21.2.1 No README data
+17 warn package.json jest-environment-node@21.2.1 No description
+18 warn package.json jest-environment-node@21.2.1 No README data
+19 warn package.json jest-get-type@21.2.0 No README data
+20 warn package.json jest-jasmine2@21.2.1 No description
+21 warn package.json jest-jasmine2@21.2.1 No README data
+22 warn package.json jest-haste-map@21.2.0 No description
+23 warn package.json jest-haste-map@21.2.0 No README data
+24 warn package.json jest-matcher-utils@21.2.1 No README data
+25 warn package.json jest-message-util@21.2.1 No description
+26 warn package.json jest-message-util@21.2.1 No README data
+27 warn package.json jest-resolve@21.2.0 No description
+28 warn package.json jest-resolve@21.2.0 No README data
+29 warn package.json jest-regex-util@21.2.0 No description
+30 warn package.json jest-regex-util@21.2.0 No README data
+31 warn package.json jest-resolve-dependencies@21.2.0 No description
+32 warn package.json jest-resolve-dependencies@21.2.0 No README data
+33 warn package.json jest-runner@21.2.1 No description
+34 warn package.json jest-runner@21.2.1 No README data
+35 warn package.json jest-runtime@21.2.1 No description
+36 warn package.json jest-runtime@21.2.1 No README data
+37 warn package.json jest-snapshot@21.2.1 No description
+38 warn package.json jest-snapshot@21.2.1 No README data
+39 warn package.json jest-util@21.2.1 No description
+40 warn package.json jest-util@21.2.1 No README data
+41 warn package.json jsesc@1.3.0 No README data
+42 warn package.json path-is-inside@1.0.2 No README data
+43 warn package.json tr46@0.0.3 No README data
+44 warn package.json bcrypt-pbkdf@1.0.1 No repository field.
+45 verbose readDependencies using package.json deps
+46 verbose cache add [ 'winston', null ]
+47 verbose cache add name=undefined spec="winston" args=["winston",null]
+48 verbose parsed url Url {
+48 verbose parsed url   protocol: null,
+48 verbose parsed url   slashes: null,
+48 verbose parsed url   auth: null,
+48 verbose parsed url   host: null,
+48 verbose parsed url   port: null,
+48 verbose parsed url   hostname: null,
+48 verbose parsed url   hash: null,
+48 verbose parsed url   search: null,
+48 verbose parsed url   query: null,
+48 verbose parsed url   pathname: 'winston',
+48 verbose parsed url   path: 'winston',
+48 verbose parsed url   href: 'winston' }
+49 verbose cache add [ 'express-winston', null ]
+50 verbose cache add name=undefined spec="express-winston" args=["express-winston",null]
+51 verbose parsed url Url {
+51 verbose parsed url   protocol: null,
+51 verbose parsed url   slashes: null,
+51 verbose parsed url   auth: null,
+51 verbose parsed url   host: null,
+51 verbose parsed url   port: null,
+51 verbose parsed url   hostname: null,
+51 verbose parsed url   hash: null,
+51 verbose parsed url   search: null,
+51 verbose parsed url   query: null,
+51 verbose parsed url   pathname: 'express-winston',
+51 verbose parsed url   path: 'express-winston',
+51 verbose parsed url   href: 'express-winston' }
+52 silly lockFile e2f3e36e-winston winston
+53 verbose lock winston /home/vlad/.npm/e2f3e36e-winston.lock
+54 silly lockFile e24bb18d-express-winston express-winston
+55 verbose lock express-winston /home/vlad/.npm/e24bb18d-express-winston.lock
+56 silly lockFile e2f3e36e-winston winston
+57 silly lockFile e2f3e36e-winston winston
+58 silly lockFile e24bb18d-express-winston express-winston
+59 silly lockFile e24bb18d-express-winston express-winston
+60 verbose addNamed [ 'winston', '' ]
+61 verbose addNamed [ null, '*' ]
+62 silly lockFile 9aa54492-winston winston@
+63 verbose lock winston@ /home/vlad/.npm/9aa54492-winston.lock
+64 verbose addNamed [ 'express-winston', '' ]
+65 verbose addNamed [ null, '*' ]
+66 silly lockFile 5e1d7b4a-express-winston express-winston@
+67 verbose lock express-winston@ /home/vlad/.npm/5e1d7b4a-express-winston.lock
+68 silly addNameRange { name: 'winston', range: '*', hasData: false }
+69 silly addNameRange { name: 'express-winston', range: '*', hasData: false }
+70 verbose request where is /winston
+71 verbose request registry https://registry.npmjs.org/
+72 verbose request id c814512257716a5e
+73 verbose url raw /winston
+74 verbose url resolving [ 'https://registry.npmjs.org/', './winston' ]
+75 verbose url resolved https://registry.npmjs.org/winston
+76 verbose request where is https://registry.npmjs.org/winston
+77 info trying registry request attempt 1 at 11:43:16 AM
+78 verbose etag W/"5a0068b5-17e91"
+79 http GET https://registry.npmjs.org/winston
+80 verbose request where is /express-winston
+81 verbose request registry https://registry.npmjs.org/
+82 verbose url raw /express-winston
+83 verbose url resolving [ 'https://registry.npmjs.org/', './express-winston' ]
+84 verbose url resolved https://registry.npmjs.org/express-winston
+85 verbose request where is https://registry.npmjs.org/express-winston
+86 info trying registry request attempt 1 at 11:43:16 AM
+87 verbose etag W/"59d6f274-156bf"
+88 http GET https://registry.npmjs.org/express-winston
+89 http 304 https://registry.npmjs.org/winston
+90 silly registry.get cb [ 304,
+90 silly registry.get   { date: 'Tue, 07 Nov 2017 16:43:17 GMT',
+90 silly registry.get     via: '1.1 varnish',
+90 silly registry.get     'cache-control': 'max-age=300',
+90 silly registry.get     etag: 'W/"5a0068b5-17e91"',
+90 silly registry.get     age: '161',
+90 silly registry.get     connection: 'close',
+90 silly registry.get     'x-served-by': 'cache-hhn1520-HHN',
+90 silly registry.get     'x-cache': 'HIT',
+90 silly registry.get     'x-cache-hits': '1',
+90 silly registry.get     'x-timer': 'S1510072997.159228,VS0,VE1',
+90 silly registry.get     vary: 'Accept-Encoding, Accept' } ]
+91 verbose etag https://registry.npmjs.org/winston from cache
+92 http 304 https://registry.npmjs.org/express-winston
+93 silly registry.get cb [ 304,
+93 silly registry.get   { date: 'Tue, 07 Nov 2017 16:43:17 GMT',
+93 silly registry.get     via: '1.1 varnish',
+93 silly registry.get     'cache-control': 'max-age=300',
+93 silly registry.get     etag: 'W/"59d6f274-156bf"',
+93 silly registry.get     age: '73',
+93 silly registry.get     connection: 'close',
+93 silly registry.get     'x-served-by': 'cache-hhn1525-HHN',
+93 silly registry.get     'x-cache': 'HIT',
+93 silly registry.get     'x-cache-hits': '1',
+93 silly registry.get     'x-timer': 'S1510072997.161766,VS0,VE0',
+93 silly registry.get     vary: 'Accept-Encoding, Accept' } ]
+94 verbose etag https://registry.npmjs.org/express-winston from cache
+95 silly addNameRange number 2 { name: 'express-winston', range: '*', hasData: true }
+96 silly addNameRange versions [ 'express-winston',
+96 silly addNameRange   [ '0.1.0',
+96 silly addNameRange     '0.1.1',
+96 silly addNameRange     '0.1.2',
+96 silly addNameRange     '0.1.3',
+96 silly addNameRange     '0.2.0',
+96 silly addNameRange     '0.2.1',
+96 silly addNameRange     '0.2.2',
+96 silly addNameRange     '0.2.3',
+96 silly addNameRange     '0.2.4',
+96 silly addNameRange     '0.2.5',
+96 silly addNameRange     '0.2.6',
+96 silly addNameRange     '0.2.8',
+96 silly addNameRange     '0.2.9',
+96 silly addNameRange     '0.2.11',
+96 silly addNameRange     '0.2.12',
+96 silly addNameRange     '0.3.0',
+96 silly addNameRange     '0.3.1',
+96 silly addNameRange     '1.0.0',
+96 silly addNameRange     '0.4.0',
+96 silly addNameRange     '1.1.0',
+96 silly addNameRange     '1.1.1',
+96 silly addNameRange     '0.4.1',
+96 silly addNameRange     '1.2.0',
+96 silly addNameRange     '1.3.0',
+96 silly addNameRange     '1.3.1',
+96 silly addNameRange     '1.4.0',
+96 silly addNameRange     '1.4.1',
+96 silly addNameRange     '1.4.2',
+96 silly addNameRange     '2.0.0',
+96 silly addNameRange     '2.1.0',
+96 silly addNameRange     '2.1.1',
+96 silly addNameRange     '2.1.2',
+96 silly addNameRange     '2.1.3',
+96 silly addNameRange     '2.2.0',
+96 silly addNameRange     '2.3.0',
+96 silly addNameRange     '2.4.0' ] ]
+97 verbose addNamed [ 'express-winston', '2.4.0' ]
+98 verbose addNamed [ '2.4.0', '2.4.0' ]
+99 silly lockFile ce1665df-express-winston-2-4-0 express-winston@2.4.0
+100 verbose lock express-winston@2.4.0 /home/vlad/.npm/ce1665df-express-winston-2-4-0.lock
+101 silly addNameRange number 2 { name: 'winston', range: '*', hasData: true }
+102 silly addNameRange versions [ 'winston',
+102 silly addNameRange   [ '0.2.11',
+102 silly addNameRange     '0.3.3',
+102 silly addNameRange     '0.3.4',
+102 silly addNameRange     '0.3.5',
+102 silly addNameRange     '0.4.0',
+102 silly addNameRange     '0.4.1',
+102 silly addNameRange     '0.5.0',
+102 silly addNameRange     '0.5.1',
+102 silly addNameRange     '0.5.2',
+102 silly addNameRange     '0.5.3',
+102 silly addNameRange     '0.5.4',
+102 silly addNameRange     '0.5.5',
+102 silly addNameRange     '0.5.6',
+102 silly addNameRange     '0.5.7',
+102 silly addNameRange     '0.5.8',
+102 silly addNameRange     '0.5.9',
+102 silly addNameRange     '0.5.10',
+102 silly addNameRange     '0.5.11',
+102 silly addNameRange     '0.6.1',
+102 silly addNameRange     '0.6.2',
+102 silly addNameRange     '0.7.0',
+102 silly addNameRange     '0.7.1',
+102 silly addNameRange     '0.7.2',
+102 silly addNameRange     '0.7.3',
+102 silly addNameRange     '0.8.0',
+102 silly addNameRange     '0.8.1',
+102 silly addNameRange     '0.8.2',
+102 silly addNameRange     '0.8.3',
+102 silly addNameRange     '0.9.0',
+102 silly addNameRange     '1.0.0',
+102 silly addNameRange     '1.0.1',
+102 silly addNameRange     '1.0.2',
+102 silly addNameRange     '1.1.0',
+102 silly addNameRange     '1.1.1',
+102 silly addNameRange     '1.1.2',
+102 silly addNameRange     '2.0.0',
+102 silly addNameRange     '2.0.1',
+102 silly addNameRange     '2.1.0',
+102 silly addNameRange     '2.1.1',
+102 silly addNameRange     '2.2.0',
+102 silly addNameRange     '2.3.0',
+102 silly addNameRange     '2.3.1',
+102 silly addNameRange     '2.4.0',
+102 silly addNameRange     '3.0.0-rc0',
+102 silly addNameRange     '3.0.0-rc1' ] ]
+103 verbose addNamed [ 'winston', '2.4.0' ]
+104 verbose addNamed [ '2.4.0', '2.4.0' ]
+105 silly lockFile 9b62f0de-winston-2-4-0 winston@2.4.0
+106 verbose lock winston@2.4.0 /home/vlad/.npm/9b62f0de-winston-2-4-0.lock
+107 silly lockFile ce1665df-express-winston-2-4-0 express-winston@2.4.0
+108 silly lockFile ce1665df-express-winston-2-4-0 express-winston@2.4.0
+109 silly lockFile 9b62f0de-winston-2-4-0 winston@2.4.0
+110 silly lockFile 9b62f0de-winston-2-4-0 winston@2.4.0
+111 silly lockFile 5e1d7b4a-express-winston express-winston@
+112 silly lockFile 5e1d7b4a-express-winston express-winston@
+113 silly lockFile 9aa54492-winston winston@
+114 silly lockFile 9aa54492-winston winston@
+115 silly resolved [ { author:
+115 silly resolved      { name: 'bithavoc',
+115 silly resolved        email: 'im@bithavoc.io',
+115 silly resolved        url: 'http://bithavoc.io' },
+115 silly resolved     name: 'express-winston',
+115 silly resolved     description: 'express.js middleware for flatiron/winston',
+115 silly resolved     keywords:
+115 silly resolved      [ 'winston',
+115 silly resolved        'flatiron',
+115 silly resolved        'logging',
+115 silly resolved        'express',
+115 silly resolved        'log',
+115 silly resolved        'error',
+115 silly resolved        'handler',
+115 silly resolved        'middleware',
+115 silly resolved        'colors' ],
+115 silly resolved     version: '2.4.0',
+115 silly resolved     repository:
+115 silly resolved      { type: 'git',
+115 silly resolved        url: 'git+https://github.com/bithavoc/express-winston.git' },
+115 silly resolved     bugs:
+115 silly resolved      { url: 'http://github.com/bithavoc/express-winston/issues',
+115 silly resolved        email: 'im@bithavoc.io' },
+115 silly resolved     main: 'index.js',
+115 silly resolved     scripts:
+115 silly resolved      { test: 'mocha --reporter spec',
+115 silly resolved        'test-travis': 'mocha --require blanket --reporter travis-cov',
+115 silly resolved        'test-coverage': 'mocha --require blanket --reporter html-cov > coverage.html || true' },
+115 silly resolved     config: { 'travis-cov': [Object], blanket: [Object] },
+115 silly resolved     dependencies: { chalk: '~0.4.0', lodash: '~4.11.1' },
+115 silly resolved     devDependencies:
+115 silly resolved      { blanket: '^1.2.2',
+115 silly resolved        mocha: '^2.4.5',
+115 silly resolved        'node-mocks-http': '^1.5.1',
+115 silly resolved        promise: '^7.1.1',
+115 silly resolved        should: '^8.2.2',
+115 silly resolved        'travis-cov': '^0.2.5',
+115 silly resolved        winston: '>=1.x' },
+115 silly resolved     peerDependencies: { winston: '>=1.x' },
+115 silly resolved     engines: { node: '>=0.10.0' },
+115 silly resolved     license: 'MIT',
+115 silly resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+115 silly resolved     gitHead: 'cf5c5379c9a42789f1192a28dcd1e937e6e2c35e',
+115 silly resolved     homepage: 'https://github.com/bithavoc/express-winston#readme',
+115 silly resolved     _id: 'express-winston@2.4.0',
+115 silly resolved     _shasum: '27ab6cd93053e2dfdc35bceea14a077dc7d52e49',
+115 silly resolved     _from: 'express-winston@',
+115 silly resolved     _npmVersion: '3.10.8',
+115 silly resolved     _nodeVersion: '6.9.1',
+115 silly resolved     _npmUser: { name: 'rosston', email: 'ross.brandes@gmail.com' },
+115 silly resolved     dist:
+115 silly resolved      { shasum: '27ab6cd93053e2dfdc35bceea14a077dc7d52e49',
+115 silly resolved        tarball: 'https://registry.npmjs.org/express-winston/-/express-winston-2.4.0.tgz' },
+115 silly resolved     maintainers: [ [Object], [Object], [Object] ],
+115 silly resolved     _npmOperationalInternal:
+115 silly resolved      { host: 'packages-12-west.internal.npmjs.com',
+115 silly resolved        tmp: 'tmp/express-winston-2.4.0.tgz_1493260552778_0.4648344018496573' },
+115 silly resolved     directories: {},
+115 silly resolved     _resolved: 'https://registry.npmjs.org/express-winston/-/express-winston-2.4.0.tgz',
+115 silly resolved     readme: 'ERROR: No README data found!' },
+115 silly resolved   { name: 'winston',
+115 silly resolved     description: 'A multi-transport async logging library for Node.js',
+115 silly resolved     version: '2.4.0',
+115 silly resolved     author: { name: 'Charlie Robbins', email: 'charlie.robbins@gmail.com' },
+115 silly resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+115 silly resolved     repository:
+115 silly resolved      { type: 'git',
+115 silly resolved        url: 'git+https://github.com/winstonjs/winston.git' },
+115 silly resolved     keywords: [ 'winston', 'logging', 'sysadmin', 'tools' ],
+115 silly resolved     dependencies:
+115 silly resolved      { async: '~1.0.0',
+115 silly resolved        colors: '1.0.x',
+115 silly resolved        cycle: '1.0.x',
+115 silly resolved        eyes: '0.1.x',
+115 silly resolved        isstream: '0.1.x',
+115 silly resolved        'stack-trace': '0.0.x' },
+115 silly resolved     devDependencies:
+115 silly resolved      { 'cross-spawn-async': '^2.0.0',
+115 silly resolved        hock: '1.x.x',
+115 silly resolved        'std-mocks': '~1.0.0',
+115 silly resolved        vows: '0.7.x' },
+115 silly resolved     main: './lib/winston',
+115 silly resolved     scripts: { test: 'vows --spec --isolate' },
+115 silly resolved     engines: { node: '>= 0.10.0' },
+115 silly resolved     license: 'MIT',
+115 silly resolved     gitHead: 'ffe883e4c8e467e543eda2e0673370f176bd5eb7',
+115 silly resolved     bugs: { url: 'https://github.com/winstonjs/winston/issues' },
+115 silly resolved     homepage: 'https://github.com/winstonjs/winston#readme',
+115 silly resolved     _id: 'winston@2.4.0',
+115 silly resolved     _shasum: '808050b93d52661ed9fb6c26b3f0c826708b0aee',
+115 silly resolved     _from: 'winston@',
+115 silly resolved     _npmVersion: '3.10.10',
+115 silly resolved     _nodeVersion: '6.10.0',
+115 silly resolved     _npmUser: { name: 'indexzero', email: 'charlie.robbins@gmail.com' },
+115 silly resolved     dist:
+115 silly resolved      { shasum: '808050b93d52661ed9fb6c26b3f0c826708b0aee',
+115 silly resolved        tarball: 'https://registry.npmjs.org/winston/-/winston-2.4.0.tgz' },
+115 silly resolved     _npmOperationalInternal:
+115 silly resolved      { host: 's3://npm-registry-packages',
+115 silly resolved        tmp: 'tmp/winston-2.4.0.tgz_1506920353218_0.3485619300045073' },
+115 silly resolved     directories: {},
+115 silly resolved     _resolved: 'https://registry.npmjs.org/winston/-/winston-2.4.0.tgz',
+115 silly resolved     readme: 'ERROR: No README data found!' } ]
+116 info install express-winston@2.4.0 into /home/vlad/workspace/graphqlrestapi
+117 info install winston@2.4.0 into /home/vlad/workspace/graphqlrestapi
+118 info installOne express-winston@2.4.0
+119 info installOne winston@2.4.0
+120 verbose node_modules/express-winston unbuild
+121 verbose node_modules/winston unbuild
+122 error TypeError: glob.hasMagic is not a function
+122 error     at rimraf (/usr/lib/nodejs/rimraf/rimraf.js:61:36)
+122 error     at gentlyRm (/usr/share/npm/lib/utils/gently-rm.js:29:12)
+122 error     at /usr/share/npm/lib/unbuild.js:31:20
+122 error     at /usr/lib/nodejs/read-package-json/read-json.js:51:40
+122 error     at ReadFileContext.<anonymous> (/usr/lib/nodejs/read-package-json/read-json.js:97:49)
+122 error     at ReadFileContext.callback (/usr/lib/nodejs/graceful-fs/graceful-fs.js:78:16)
+122 error     at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:303:13)
+123 error If you need help, you may report this *entire* log,
+123 error including the npm and node versions, at:
+123 error     <http://github.com/npm/npm/issues>
+124 error System Linux 4.7.0-1-amd64
+125 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "winston" "express-winston"
+126 error cwd /home/vlad/workspace/graphqlrestapi
+127 error node -v v4.6.1
+128 error npm -v 1.4.21
+129 verbose exit [ 1, true ]
