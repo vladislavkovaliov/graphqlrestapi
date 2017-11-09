@@ -1,38 +1,24 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-const apiRouter = require('./routes/api.router');
-const winston = require('winston');
-const expressWinston = require('express-winston');
+const rest = require('./routes/rest.router');
 const errorHandler = require('./handlers/error.handler');
-const morgan = require('morgan');
-
+const { setupMiddlewares, setupLogger } = require('./middlewares');
 const PORT = 3000;
 
 /**
  * Setup logger
  */
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
-app.use(expressWinston.logger({
-  transports: [
-  new winston.transports.Console({
-    json: true,
-      colorize: true
-    })
-  ],
-}));
+setupLogger(app);
 
 /**
  * Setup middlewares
  */
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+setupMiddlewares(app);
 
 /**
  * Setup routing
  */
-
-app.use('/api', apiRouter);
+app.use(rest);
 app.use('*', (req, res) => res.status(404).json({ message: 'Route does\'t exist.' }));
 
 app.use(errorHandler);

@@ -1,9 +1,10 @@
 const router = require('express').Router();
+const APIController = require('../controllers/api.controller');
 
-router.get('/', (req, res) => {
-  res.status(200).json({
-    message: 'OK'
-  });
-});
+const apiController = APIController();
+
+router
+  .route('/pingPong')
+  .get(apiController.getPingPong);
 
 module.exports = router;
