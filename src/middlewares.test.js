@@ -1,4 +1,4 @@
-const { setupMiddlewares, setupLogger, setupGraphiql } = require('./middlewares');
+const { setupMiddlewares, setupLogger, setupGraphiql, expressGraphQL } = require('./middlewares');
 const bodyParser = require('body-parser');
 
 jest.mock('body-parser', () => ({
@@ -8,7 +8,6 @@ jest.mock('body-parser', () => ({
 // jest.mock('morgan', );
 // jest.mock('winston', );
 // jest.mock('express-winston', );
-// jest.mock('express-graphql', );
 // jest.mock('graphql', );
 
 const app = {
@@ -17,16 +16,24 @@ const app = {
 
 describe('[middlewares.js]', () => {
   describe('setupMiddlewares()', () => {
-    test('should pass into use method a body-parser json()', () => {
+    test('should pass into use() a body-parser json()', () => {
       setupMiddlewares(app);
 
       expect(bodyParser.json).toHaveBeenCalled();
     });
 
-    test('should pass into use method a body-parser urlencoded({ extended: false })', () => {
+    test('should pass into use() a body-parser urlencoded({ extended: false })', () => {
       setupMiddlewares(app);
 
       expect(bodyParser.urlencoded).toHaveBeenCalledWith({ extended: false });
+    });
+  });
+
+  describe('setupGraphiql()', () => {
+    test('should pass into use() url and express-graphql object', () => {
+      setupGraphiql(app);
+
+      expect(app.use).toHaveBeenCalledWith('/graphql', expressGraphQL);
     });
   });
 });

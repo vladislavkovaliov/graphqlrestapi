@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const winston = require('winston');
 const expressWinston = require('express-winston');
-const expressGraphQL = require('express-graphql');
+const ExpressGraphQL = require('express-graphql');
 const graphql = require('graphql');
 const UserType = require('./types/user.type');
 const { find } = require('lodash');
@@ -33,6 +33,11 @@ const schema = new graphql.GraphQLSchema({
   query: RootQuery
 });
 
+const expressGraphQL = ExpressGraphQL({
+  schema: schema,
+  graphiql: true,
+});
+
 module.exports = {
   setupMiddlewares: (app) => {
     app.use(bodyParser.json());
@@ -50,9 +55,10 @@ module.exports = {
     }));
   },
   setupGraphiql: (app) => {
-    app.use('/graphql', expressGraphQL({
-      schema: schema,
-      graphiql: true,
-    }));
+    app.use('/graphql', expressGraphQL);
   },
+  // only for testing
+  RootQuery,
+  schema,
+  expressGraphQL,
 };
