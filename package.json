@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/nodemon ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/jest"
   },
   "author": "",
   "license": "ISC",
@@ -15,10 +15,12 @@
     "express-graphql": "0.6.11",
     "express-winston": "2.4.0",
     "graphql": "0.11.7",
-    "jest": "21.2.1",
     "lodash": "4.17.4",
     "morgan": "1.9.0",
     "nodemon": "1.12.1",
     "winston": "2.4.0"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1"
   }
 }
