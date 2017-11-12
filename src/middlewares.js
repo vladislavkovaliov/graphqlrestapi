@@ -2,6 +2,36 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const winston = require('winston');
 const expressWinston = require('express-winston');
+const expressGraphQL = require('express-graphql');
+const graphql = require('graphql');
+const UserType = require('./types/user.type');
+const { find } = require('lodash');
+const users = require('./data/users');
+
+const RootQuery = new graphql.GraphQLObjectType({
+  name: 'RootQueryType',
+  fields: {
+    user: {
+      type: UserType,
+      args: {
+        id: { type: graphql.GraphQLString }
+      },
+      resolve(parentValue, args) {
+        return find(users, ['id', args.id]);
+      }
+    },
+    users: {
+      type: new graphql.GraphQLList(UserType),
+      resolve(parentValue, args) {
+        return users;
+      }
+    }
+  }
+});
+
+const schema = new graphql.GraphQLSchema({
+  query: RootQuery
+});
 
 module.exports = {
   setupMiddlewares: (app) => {
@@ -18,5 +48,11 @@ module.exports = {
         })
       ],
     }));
-  }
+  },
+  setupGraphiql: (app) => {
+    app.use('/graphql', expressGraphQL({
+      schema: schema,
+      graphiql: true,
+    }));
+  },
 };

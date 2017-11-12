@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const rest = require('./routes/rest.router');
 const errorHandler = require('./handlers/error.handler');
-const { setupMiddlewares, setupLogger } = require('./middlewares');
+const { setupMiddlewares, setupLogger, setupGraphiql } = require('./middlewares');
 const PORT = 3000;
 
 /**
@@ -14,6 +14,11 @@ setupLogger(app);
  * Setup middlewares
  */
 setupMiddlewares(app);
+
+/**
+ * Setup graphql
+ */
+setupGraphiql(app);
 
 /**
  * Setup routing
