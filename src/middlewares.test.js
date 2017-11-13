@@ -1,4 +1,6 @@
-const { setupMiddlewares, setupLogger, setupGraphiql, expressGraphQL } = require('./middlewares');
+const { setupMiddlewares, setupLogger, setupGraphiql } = require('./middlewares');
+const { expressGraphQL } = require('./graphql/init');
+
 const bodyParser = require('body-parser');
 
 jest.mock('body-parser', () => ({
