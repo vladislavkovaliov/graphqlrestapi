@@ -1,11 +1,21 @@
-const { setupMiddlewares, setupLogger, setupGraphiql } = require('./middlewares');
+const { setupMiddlewares, setupLogger, setupGraphiql, setupPassport } = require('./middlewares');
 const { expressGraphQL } = require('./graphql/init');
-
+const passport = require('passport');
 const bodyParser = require('body-parser');
 
 jest.mock('body-parser', () => ({
   json: jest.fn(),
   urlencoded: jest.fn(),
+}));
+jest.mock('passport-jwt', () => ({
+  Strategy: jest.fn(),
+  ExtractJwt: {
+    fromAuthHeaderWithScheme: jest.fn(),
+  },
+}));
+jest.mock('passport', () => ({
+  use: jest.fn(),
+  initialize: jest.fn(),
 }));
 // jest.mock('morgan', );
 // jest.mock('winston', );
@@ -36,6 +46,16 @@ describe('[middlewares.js]', () => {
       setupGraphiql(app);
 
       expect(app.use).toHaveBeenCalledWith('/graphql', expressGraphQL);
+    });
+  });
+
+  describe('setupPassport()', () => {
+    test('should setup passport and initialize', () => {
+      setupPassport(app, passport);
+
+      expect(passport.use).toHaveBeenCalled();
+      expect(passport.initialize).toHaveBeenCalled();
+      expect(app.use).toHaveBeenCalled();
     });
   });
 });

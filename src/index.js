@@ -1,8 +1,13 @@
 const express = require('express');
 const app = express();
-const rest = require('./routes/rest.router');
 const errorHandler = require('./handlers/error.handler');
-const { setupMiddlewares, setupLogger, setupGraphiql } = require('./middlewares');
+const passport = require('passport');
+const {
+  setupMiddlewares,
+  setupLogger,
+  setupGraphiql,
+  setupPassport } = require('./middlewares');
+const rest = require('./routes/rest.router');
 const PORT = 3000;
 
 /**
@@ -19,6 +24,11 @@ setupMiddlewares(app);
  * Setup graphql
  */
 setupGraphiql(app);
+
+/**
+ * Setup passport
+ */
+setupPassport(app, passport);
 
 /**
  * Setup routing
