@@ -36,10 +36,11 @@ test:
     
 staging:
   type: deploy
+  image: ruby:latest
   script:
       - apt-get update -qy
       - apt-get install -y ruby-dev
-      - apt-get install gem
+      - apt-get install -y gem
       - gem install dpl
       - dpl --provider=heroku --app=graphqlrestapi --api-key=$HEROKU_STAGING_API_KEY
   only:
