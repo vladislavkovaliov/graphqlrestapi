@@ -42,6 +42,40 @@ setupCors(app);
  * Setup routing
  */
 app.use(rest);
+app.use('/', (req, res) => {
+  res.json({
+    GraphIQL: {
+      url: "https://graphqlrestapi.herokuapp.com/graphql"
+    },
+    urls: {
+      auth: "https://graphqlrestapi.herokuapp.com/auth",
+      body: {
+        keys: ['login', 'password'],
+        description: `
+          You can get login/password from graphiql.
+        `
+      },
+      public: {
+        urls: [
+          "https://graphqlrestapi.herokuapp.com/api/pingPong"
+        ]
+      },
+      private: {
+        urls: [
+          "https://graphqlrestapi.herokuapp.com/api/authPingPong",
+          headers: {
+            authorization: 'JWT ...'
+          }
+        ]
+      }
+    },
+    contacts: {
+      email: 'v.v.kovaliov@gmail.com',
+      skype: 'v.v.kovaliov',
+      github: 'github.com/vladislavkovaliov'
+    }
+  });
+});
 app.use('*', (req, res) => res.status(404).json({ message: 'Route does\'t exist.' }));
 
 app.use(errorHandler);
