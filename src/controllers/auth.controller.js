@@ -1,13 +1,14 @@
 const jwt = require('jsonwebtoken');
 const users = require('../data/users');
 const { find } = require('lodash');
+const { AUTHENTICATION_ERROR } = require('../errors/errors');
 
 module.exports = function (overrides) {
   const base = {
     jwt: (req, res, next) => {
       const { email } = req.body;
       const user = find(users, ['email', email]);
-
+      
       if (user) {
         const { password } = req.body;
 
@@ -26,18 +27,10 @@ module.exports = function (overrides) {
             token: `JWT ${token}`,
           });
         } else {
-          next({
-            success: false,
-            msg: 'Authentication failed. Wrong password.',
-            statusCode: 401,
-          });
+          next(AUTHENTICATION_ERROR);
         }
       } else {
-        next({
-          success: false,
-          msg: 'Authentication failed. User not found.',
-          statusCode: 401,
-        })
+        next(AUTHENTICATION_ERROR)
       }
     }
   };

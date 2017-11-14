@@ -9,10 +9,10 @@ const RootQuery = new graphql.GraphQLObjectType({
     user: {
       type: UserType,
       args: {
-        id: { type: graphql.GraphQLString }
+        index: { type: graphql.GraphQLInt }
       },
       resolve(parentValue, args) {
-        return find(users, ['id', args.id]);
+        return find(users, ['index', args.index]);
       }
     },
     users: {
