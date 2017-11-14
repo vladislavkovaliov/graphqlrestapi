@@ -7,6 +7,7 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const users = require('./data/users');
 const { find } = require('lodash');
+const cors = require('cors');
 
 module.exports = {
     setupMiddlewares: (app) => {
@@ -44,5 +45,8 @@ module.exports = {
       }));
 
       app.use(passport.initialize());
+    },
+    setupCors: (app) => {
+      app.use(cors());
     }
   };

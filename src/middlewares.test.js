@@ -1,7 +1,8 @@
-const { setupMiddlewares, setupLogger, setupGraphiql, setupPassport } = require('./middlewares');
+const { setupMiddlewares, setupLogger, setupGraphiql, setupPassport, setupCors } = require('./middlewares');
 const { expressGraphQL } = require('./graphql/init');
 const passport = require('passport');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 jest.mock('body-parser', () => ({
   json: jest.fn(),
@@ -17,6 +18,8 @@ jest.mock('passport', () => ({
   use: jest.fn(),
   initialize: jest.fn(),
 }));
+jest.mock('cors', () => jest.fn());
+
 // jest.mock('morgan', );
 // jest.mock('winston', );
 // jest.mock('express-winston', );
@@ -55,6 +58,15 @@ describe('[middlewares.js]', () => {
 
       expect(passport.use).toHaveBeenCalled();
       expect(passport.initialize).toHaveBeenCalled();
+      expect(app.use).toHaveBeenCalled();
+    });
+  });
+
+  describe('setupCors()', () => {
+    test('should setup cors', () => {
+      setupCors(app);
+
+      expect(cors).toHaveBeenCalled();
       expect(app.use).toHaveBeenCalled();
     });
   });
