@@ -6,7 +6,8 @@ const {
   setupMiddlewares,
   setupLogger,
   setupGraphiql,
-  setupPassport } = require('./middlewares');
+  setupPassport,
+  setupCors } = require('./middlewares');
 const rest = require('./routes/rest.router');
 const PORT = 3000;
 
@@ -29,6 +30,11 @@ setupGraphiql(app);
  * Setup passport
  */
 setupPassport(app, passport);
+
+/**
+ * Setup cors
+ */
+setupCors(app);
 
 /**
  * Setup routing
