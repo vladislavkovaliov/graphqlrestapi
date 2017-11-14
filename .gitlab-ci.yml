@@ -39,6 +39,7 @@ staging:
   script:
       - apt-get update -qy
       - apt-get install -y ruby-dev
+      - apt-get install gem
       - gem install dpl
       - dpl --provider=heroku --app=graphqlrestapi --api-key=$HEROKU_STAGING_API_KEY
   only:
