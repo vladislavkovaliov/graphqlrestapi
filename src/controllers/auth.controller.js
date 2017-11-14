@@ -6,8 +6,8 @@ const { AUTHENTICATION_ERROR } = require('../errors/errors');
 module.exports = function (overrides) {
   const base = {
     jwt: (req, res, next) => {
-      const { email } = req.body;
-      const user = find(users, ['email', email]);
+      const { login } = req.body;
+      const user = find(users, ['login', login]);
 
       if (user) {
         const { password } = req.body;
