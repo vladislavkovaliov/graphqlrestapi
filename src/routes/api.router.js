@@ -1,11 +1,9 @@
 const router = require('express').Router();
 const passport = require('passport');
-
+const protect = require('../middlewares/auth.middleware');
 const APIController = require('../controllers/api.controller');
-const APIProxyController = require('../controllers/proxies/api.controller.proxy');
 
 const apiController = APIController();
-const apiProxyController = APIProxyController();
 
 router
   .route('/pingPong')
@@ -13,6 +11,6 @@ router
 
 router
   .route('/authPingPong')
-  .get(apiProxyController.getPingPong);
+  .get(protect, apiController.getPingPong);
 
 module.exports = router;
