@@ -63,10 +63,10 @@ app.use('/', (req, res) => {
       private: {
         urls: [
           "https://graphqlrestapi.herokuapp.com/api/authPingPong",
-          headers: {
-            authorization: 'JWT ...'
-          }
-        ]
+        ],
+        headers: {
+          authorization: 'JWT ...'
+        }
       }
     },
     contacts: {
