@@ -9,7 +9,9 @@ const {
   setupPassport,
   setupCors } = require('./middlewares');
 const rest = require('./routes/rest.router');
-const PORT = 3000;
+// const PORT = 3000;
+
+app.set('port', (process.env.PORT || 3000))
 
 /**
  * Setup logger
@@ -47,6 +49,6 @@ app.use(errorHandler);
 /**
  * Start server
  */
-app.listen(PORT, (port) => {
-  console.log('Server started on port', PORT);
+app.listen(app.get('port'), () => {
+  console.log('Server started on port', app.get('port'));
 });
