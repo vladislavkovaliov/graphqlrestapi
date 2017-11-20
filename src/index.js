@@ -7,7 +7,8 @@ const {
   setupLogger,
   setupGraphiql,
   setupPassport,
-  setupCors } = require('./middlewares');
+  setupCors,
+  setupSwagger } = require('./middlewares');
 const rest = require('./routes/rest.router');
 // const PORT = 3000;
 
@@ -39,9 +40,16 @@ setupPassport(app, passport);
 setupCors(app);
 
 /**
+ * Setup swagger
+ */
+setupSwagger(app);
+
+/**
  * Setup routing
  */
 app.use(rest);
+app.use('/swagger', express.static('swagger'));
+
 app.use('/', (req, res) => {
   res.json({
     GraphIQL: {

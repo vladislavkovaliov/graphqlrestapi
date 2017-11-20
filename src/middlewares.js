@@ -48,5 +48,7 @@ module.exports = {
     },
     setupCors: (app) => {
       app.use(cors());
+    },
+    setupSwagger: (app) => {
     }
   };
