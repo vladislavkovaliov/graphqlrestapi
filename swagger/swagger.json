@@ -1,154 +1,154 @@
 {
-	"swagger": "2.0",
-	"info": {
-		"title": "REST API",
-		"description": "REST API docs",
-		"version": "1.0.0"
-	},
-	"host": "graphqlrestapi.herokuapp.com",
-	"schemes": [
-		"https",
-		"http"
-	],
-	"basePath": "",
-	"produces": [
-		"application/json"
-	],
-	"paths": {
-		"/api/pingPong": {
-			"get": {
-				"summary": "Test",
-				"description": "Test description",
-				"parameters": null,
-				"tags": [
-					"API"
-				],
-				"responses": {
-					"200": {
-						"description": "An Object",
-						"schema": {
-							"$ref": "#/definitions/PingPong"
-						}
-					},
-					"default": {
-						"description": "Unexpected error",
-						"schema": {
-							"$ref": "#/definitions/Error"
-						}
-					}
-				}
-			}
-		},
-		"/api/authPingPong": {
-			"get": {
-				"summary": "Test",
-				"description": "test",
-				"parameters": [
-					{
-						"name": "authorization",
-		        "in": "header",
-	          "description": "JWT token.",
-	          "required": "true",
-	          "type": "string"
-					}
-				],
-				"tags": [
-					"API"
-				],
-				"responses": {
-					"200": {
-						"description": "An Object",
-						"schema": {
-							"$ref": "#/definitions/PingPong"
-						}
-					},
-					"403": {
-						"description": "Unexpected error",
-						"schema": {
-							"$ref": "#/definitions/Error"
-						}
-					}
-				}
-			}
-		},
-		"/auth": {
-			"post": {
-				"summary": "Test",
-				"description": "test",
-				"parameters": [
-					{
-						"name": "body",
-		        "in": "body",
-	          "description": "Data object",
-	          "required": "true",
-	          "type": "string",
-						"schema": {
-							"type": "object",
-							"properties": {
-								"email": {
-									"type": "string",
-									"description": "email"
-								},
-								"password": {
-									"type": "string",
-									"description": "password"
-								}
-							}
-						}
-					}
-				],
-				"tags": [
-					"Auth"
-				],
-				"responses": {
-					"200": {
-						"description": "An Object",
-						"schema": {
-							"properties": {
-								"email": {
-									"type": "string",
-									"description": "email"
-								},
-								"password": {
-									"type": "string",
-									"description": "password"
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "Unauthorized",
-						"schema": {
-							"$ref": "#/definitions/Error401"
-						}
-					}
-				}
-			}
-		}
-	},
-	"definitions": {
-		"PingPong": {
-			"type": "object",
-			"properties": {
-				"pingPong": {
-					"type": "string",
-					"description": "just message"
-				}
-			}
-		},
-		"Error": {
-			"type": "object",
-			"properties": {
-				"statusCode": {
-					"type": "integer"
-				},
-				"success": {
-					"type": "boolean"
-				},
-				"msg": {
-					"type": "string"
-				}
-			}
-		}
-	}
+  "swagger": "2.0",
+  "info": {
+    "title": "REST API",
+    "description": "REST API docs",
+    "version": "1.0.0"
+  },
+  "host": "graphqlrestapi.herokuapp.com",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "basePath": "",
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/pingPong": {
+      "get": {
+        "summary": "Test",
+        "description": "Test description",
+        "parameters": null,
+        "tags": [
+          "API"
+        ],
+        "responses": {
+          "200": {
+            "description": "An Object",
+            "schema": {
+              "$ref": "#/definitions/PingPong"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/api/authPingPong": {
+      "get": {
+        "summary": "Test",
+        "description": "test",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT token.",
+            "required": "true",
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "API"
+        ],
+        "responses": {
+          "200": {
+            "description": "An Object",
+            "schema": {
+              "$ref": "#/definitions/PingPong"
+            }
+          },
+          "403": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/auth": {
+      "post": {
+        "summary": "Test",
+        "description": "test",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Data object",
+            "required": "true",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "description": "email"
+                },
+                "password": {
+                  "type": "string",
+                  "description": "password"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "An Object",
+            "schema": {
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "description": "email"
+                },
+                "password": {
+                  "type": "string",
+                  "description": "password"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error401"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "PingPong": {
+      "type": "object",
+      "properties": {
+        "pingPong": {
+          "type": "string",
+          "description": "just message"
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "integer"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "msg": {
+          "type": "string"
+        }
+      }
+    }
+  }
 }
