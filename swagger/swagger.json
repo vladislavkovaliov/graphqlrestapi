@@ -10,7 +10,7 @@
 		"https",
 		"http"
 	],
-	"basePath": null,
+	"basePath": "",
 	"produces": [
 		"application/json"
 	],
@@ -104,7 +104,6 @@
 					"200": {
 						"description": "An Object",
 						"schema": {
-							"type": "object",
 							"properties": {
 								"email": {
 									"type": "string",
@@ -118,7 +117,7 @@
 						}
 					},
 					"401": {
-						"description": "Authentication failed. Wrong password.",
+						"description": "Unauthorized",
 						"schema": {
 							"$ref": "#/definitions/Error401"
 						}
@@ -133,7 +132,7 @@
 			"properties": {
 				"pingPong": {
 					"type": "string",
-					"description": "just message."
+					"description": "just message"
 				}
 			}
 		},
@@ -141,8 +140,7 @@
 			"type": "object",
 			"properties": {
 				"statusCode": {
-					"type": "integer",
-					"format": "int32"
+					"type": "integer"
 				},
 				"success": {
 					"type": "boolean"
