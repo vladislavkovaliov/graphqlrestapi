@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 
 module.exports = UserType = new graphql.GraphQLObjectType({
-  name: 'User',
+  name: 'Profile',
   fields: () => ({
     id: { type: graphql.GraphQLString },
     index: { type: graphql.GraphQLInt },
@@ -16,8 +16,8 @@ module.exports = UserType = new graphql.GraphQLObjectType({
     dateOfBirth: { type: graphql.GraphQLString },
     guid: { type: graphql.GraphQLString },
     picture: { type: graphql.GraphQLString },
-    homeAddress: { type: graphql.GraphQLString },
     department: { type: graphql.GraphQLString },
+    homeAddress: { type: graphql.GraphQLString },
     phones: { type: new graphql.GraphQLList(graphql.GraphQLString) },
   })
 });

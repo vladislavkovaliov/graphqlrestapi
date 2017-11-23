@@ -5,9 +5,8 @@
     "description": "REST API docs",
     "version": "1.0.0"
   },
-  "host": "graphqlrestapi.herokuapp.com",
+  "host": "localhost:3000",
   "schemes": [
-    "https",
     "http"
   ],
   "basePath": "",
@@ -99,6 +98,60 @@
         ],
         "tags": [
           "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "An Object",
+            "schema": {
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "description": "email"
+                },
+                "password": {
+                  "type": "string",
+                  "description": "password"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error401"
+            }
+          }
+        }
+      }
+    },
+    "/api/profiles": {
+      "post": {
+        "summary": "Return all profiles",
+        "description": "Return all profiles by graphql syntax",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Data object",
+            "required": "true",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "number",
+                  "description": "email"
+                },
+                "email": {
+                  "type": "string",
+                  "description": "password"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Profiles"
         ],
         "responses": {
           "200": {

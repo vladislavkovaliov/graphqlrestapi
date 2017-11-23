@@ -1,6 +1,7 @@
 const graphql = require('graphql');
 const users = require('../../data/users');
-const { UserType } = require('../types');
+const profiles = require('../../data/profiles');
+const { UserType, ProfileType } = require('../types');
 const { find } = require('lodash');
 
 const RootQuery = new graphql.GraphQLObjectType({
@@ -13,6 +14,21 @@ const RootQuery = new graphql.GraphQLObjectType({
       },
       resolve(parentValue, args) {
         return find(users, ['index', args.index]);
+      }
+    },
+    profile: {
+      type: ProfileType,
+      args: {
+        index: { type: graphql.GraphQLInt }
+      },
+      resolve(parentValue, args) {
+        return find(profiles, ['index', args.index]);
+      }
+    },
+    profiles: {
+      type: new graphql.GraphQLList(ProfileType),
+      resolve(parentValue, args) {
+        return profiles;
       }
     },
     users: {
