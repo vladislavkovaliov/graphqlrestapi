@@ -45,6 +45,7 @@ setupCors(app);
 /**
  * Setup swagger
  */
+const { env } = argv;
 switch (env) {
   case('dev'): {
     setupSwaggerDev(app);
