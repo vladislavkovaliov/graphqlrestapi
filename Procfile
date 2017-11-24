@@ -1,1 +1,1 @@
-web: npm start<F3>
+web: npm start
