@@ -1,8 +1,9 @@
-const { setupMiddlewares, setupLogger, setupGraphiql, setupPassport, setupCors } = require('./middlewares');
+const { setupMiddlewares, setupLogger, setupGraphiql, setupPassport, setupCors, setupSwaggerDev, setupSwaggerQA } = require('./middlewares');
 const { expressGraphQL } = require('./graphql/init');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const fs = require('fs');
 
 jest.mock('body-parser', () => ({
   json: jest.fn(),
@@ -19,6 +20,10 @@ jest.mock('passport', () => ({
   initialize: jest.fn(),
 }));
 jest.mock('cors', () => jest.fn());
+jest.mock('fs', () => ({
+  readFileSync: jest.fn(() => 'some string'),
+  writeFileSync: jest.fn(),
+}));
 
 // jest.mock('morgan', );
 // jest.mock('winston', );
@@ -68,6 +73,26 @@ describe('[middlewares.js]', () => {
 
       expect(cors).toHaveBeenCalled();
       expect(app.use).toHaveBeenCalled();
+    });
+  });
+
+  describe('setupSwaggerDev()', () => {
+    test('should setup swagger for dev', () => {
+      app.get = jest.fn(() => 3000);
+
+      setupSwaggerDev(app);
+
+      expect(fs.readFileSync).toHaveBeenCalled();
+      expect(fs.writeFileSync).toHaveBeenCalled();
+    });
+
+    test('should setup swagger for qa', () => {
+      app.get = jest.fn(() => 3000);
+
+      setupSwaggerQA(app);
+
+      expect(fs.readFileSync).toHaveBeenCalled();
+      expect(fs.writeFileSync).toHaveBeenCalled();
     });
   });
 });
