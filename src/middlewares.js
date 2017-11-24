@@ -8,6 +8,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 const users = require('./data/users');
 const { find } = require('lodash');
 const cors = require('cors');
+const fs = require('fs');
 
 module.exports = {
     setupMiddlewares: (app) => {
@@ -27,6 +28,8 @@ module.exports = {
     },
     setupGraphiql: (app) => {
       app.use('/graphql', expressGraphQL);
+      app.use('/graphql/profiles', expressGraphQL);
+      app.use('/graphql/users', expressGraphQL);
     },
     setupPassport: (app, passport) => {
       const passportOptions = {
@@ -49,6 +52,22 @@ module.exports = {
     setupCors: (app) => {
       app.use(cors());
     },
-    setupSwagger: (app) => {
+    setupSwaggerDev: (app) => {
+      const swaggerSource = './swagger/index.template.html';
+      const swaggerTarget = './swagger/index.html';
+
+      const data = fs.readFileSync(swaggerSource, 'utf8');
+      const newData = data.replace('%SOURCE%', `"http://localhost:${app.get('port')}/swagger/swagger.json"`);
+
+      fs.writeFileSync(swaggerTarget, newData);
+    },
+    setupSwaggerQA: (app) => {
+      const swaggerSource = './swagger/index.template.html';
+      const swaggerTarget = './swagger/index.html';
+
+      const data = fs.readFileSync(swaggerSource, 'utf8');
+      const newData = data.replace('%SOURCE%', '"https://graphqlrestapi.herokuapp.com/swagger/swagger.json"');
+
+      fs.writeFileSync(swaggerTarget, newData);
     }
   };

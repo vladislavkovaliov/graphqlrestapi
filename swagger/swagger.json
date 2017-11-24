@@ -5,9 +5,9 @@
     "description": "REST API docs",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "graphqlrestapi.herokuapp.com",
   "schemes": [
-    "http"
+    "https"
   ],
   "basePath": "",
   "produces": [
@@ -124,7 +124,7 @@
         }
       }
     },
-    "/api/profiles": {
+    "/graphql/profile": {
       "post": {
         "summary": "Return all profiles",
         "description": "Return all profiles by graphql syntax",
@@ -132,19 +132,15 @@
           {
             "name": "body",
             "in": "body",
-            "description": "Data object",
+            "description": "Graphql query",
             "required": "true",
             "type": "string",
             "schema": {
               "type": "object",
               "properties": {
-                "index": {
-                  "type": "number",
-                  "description": "email"
-                },
-                "email": {
+                "query": {
                   "type": "string",
-                  "description": "password"
+                  "description": "Grapqhql query"
                 }
               }
             }
@@ -158,13 +154,135 @@
             "description": "An Object",
             "schema": {
               "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "dateOfBirth": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "hireDate": {
+                  "type": "string",
+                  "description": "Test"
+                },
                 "email": {
                   "type": "string",
-                  "description": "email"
+                  "description": "Test"
                 },
-                "password": {
+                "gender": {
                   "type": "string",
-                  "description": "password"
+                  "description": "Test"
+                },
+                "department": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "homeAddress": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "phones": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "login": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "created": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Test"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error401"
+            }
+          }
+        }
+      }
+    },
+    "/graphql/users": {
+      "post": {
+        "summary": "Return all users info",
+        "description": "Return all user's data by graphql syntax",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Graphql query",
+            "required": "true",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "description": "Grapqhql query"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "An Object",
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "dateOfBirth": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "hireDate": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "email": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "gender": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "department": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "homeAddress": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "phones": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "login": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "created": {
+                  "type": "string",
+                  "description": "Test"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Test"
                 }
               }
             }

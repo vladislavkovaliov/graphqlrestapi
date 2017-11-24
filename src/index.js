@@ -8,8 +8,11 @@ const {
   setupGraphiql,
   setupPassport,
   setupCors,
-  setupSwagger } = require('./middlewares');
+  setupSwaggerDev,
+  setupSwaggerQA } = require('./middlewares');
 const rest = require('./routes/rest.router');
+const argv = require('minimist')(process.argv.slice(2));
+
 // const PORT = 3000;
 
 app.set('port', (process.env.PORT || 3000))
@@ -42,7 +45,18 @@ setupCors(app);
 /**
  * Setup swagger
  */
-setupSwagger(app);
+switch (env) {
+  case('dev'): {
+    setupSwaggerDev(app);
+    break;
+  }
+  case('qa'): {
+    setupSwaggerQA(app);
+    break;
+  }
+  default:
+    break;
+}
 
 /**
  * Setup routing
