@@ -8,7 +8,7 @@ module.exports = function (overrides) {
     jwt: (req, res, next) => {
       const { login } = req.body;
       const user = find(users, ['login', login]);
-      console.log(req.body);
+
       if (user) {
         const { password } = req.body;
 
@@ -24,6 +24,7 @@ module.exports = function (overrides) {
               login: user.login,
               password: user.password,
               profileId: user.guid,
+              index: user.index,
             },
             token: `JWT ${token}`,
           });
