@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 module.exports = function (overrides) {
   const base = {
     getPingPong: (req, res) => {

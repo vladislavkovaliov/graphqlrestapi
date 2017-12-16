@@ -52,19 +52,19 @@ module.exports = {
     setupCors: (app) => {
       app.use(cors());
     },
-    setupSwaggerDev: (app) => {
+    setupSwaggerLocal: (app) => {
       const swaggerSource = './swagger/index.template.html';
       const swaggerTarget = './swagger/index.html';
-
+    
       const data = fs.readFileSync(swaggerSource, 'utf8');
       const newData = data.replace('%SOURCE%', `"http://localhost:${app.get('port')}/swagger/swagger.json"`);
 
       fs.writeFileSync(swaggerTarget, newData);
     },
-    setupSwaggerQA: (app) => {
+    setupSwaggerHeroku: (app) => {
       const swaggerSource = './swagger/index.template.html';
       const swaggerTarget = './swagger/index.html';
-
+      
       const data = fs.readFileSync(swaggerSource, 'utf8');
       const newData = data.replace('%SOURCE%', '"https://graphqlrestapi.herokuapp.com/swagger/swagger.json"');
 

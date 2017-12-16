@@ -8,14 +8,20 @@ const {
   setupGraphiql,
   setupPassport,
   setupCors,
-  setupSwaggerDev,
-  setupSwaggerQA } = require('./middlewares');
+  setupSwaggerLocal,
+  setupSwaggerHeroku } = require('./middlewares');
 const rest = require('./routes/rest.router');
 const argv = require('minimist')(process.argv.slice(2));
-
-// const PORT = 3000;
+const config = require('./config/config');
 
 app.set('port', (process.env.PORT || 3000))
+
+/**
+ * Set env. (it may be qa/dev)
+ * QA - heroku
+ * LOCAL - local
+ */
+app.set('env', argv.env);
 
 /**
  * Setup logger
@@ -45,14 +51,13 @@ setupCors(app);
 /**
  * Setup swagger
  */
-const { env } = argv;
-switch (env) {
-  case('dev'): {
-    setupSwaggerDev(app);
+switch (argv.env) {
+  case(config.env.local): {
+    setupSwaggerLocal(app);
     break;
   }
-  case('qa'): {
-    setupSwaggerQA(app);
+  case(config.env.heroku): {
+    setupSwaggerHeroku(app);
     break;
   }
   default:

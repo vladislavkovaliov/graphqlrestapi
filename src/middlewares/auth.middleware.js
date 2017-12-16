@@ -3,7 +3,6 @@ const { UNAUTHOTIZED } = require('../errors/errors');
 
 function passportAuth(req, res, next) {
   passport.authenticate('jwt', { session: false }, (err, data) => {
-
     if (data) {
       next(null, req, res);
     } else {

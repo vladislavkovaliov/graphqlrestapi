@@ -295,6 +295,30 @@
           }
         }
       }
+    },
+    "/api/config": {
+      "get": {
+        "summary": "Test",
+        "description": "test",
+        "parameters": [],
+        "tags": [
+          "API"
+        ],
+        "responses": {
+          "200": {
+            "description": "An Object",
+            "schema": {
+              "$ref": "#/definitions/Config"
+            }
+          },
+          "404": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -318,6 +342,23 @@
         },
         "msg": {
           "type": "string"
+        }
+      }
+    },
+    "Config": {
+      "type": "object",
+      "properties": {
+        "MONGO_URL": {
+          "type": "string",
+          "description": "url"
+        },
+        "MLAB_USER": {
+          "type": "string",
+          "description": "url"
+        },
+        "MLAB_PASSWORD": {
+          "type": "string",
+          "description": "url"
         }
       }
     }
