@@ -1,4 +1,11 @@
-const { setupMiddlewares, setupLogger, setupGraphiql, setupPassport, setupCors, setupSwaggerDev, setupSwaggerQA } = require('./middlewares');
+const { 
+  setupMiddlewares, 
+  setupLogger, 
+  setupGraphiql, 
+  setupPassport, 
+  setupCors, 
+  setupSwaggerLocal, 
+  setupSwaggerHeroku } = require('./middlewares');
 const { expressGraphQL } = require('./graphql/init');
 const passport = require('passport');
 const bodyParser = require('body-parser');
@@ -76,20 +83,20 @@ describe('[middlewares.js]', () => {
     });
   });
 
-  describe('setupSwaggerDev()', () => {
-    test('should setup swagger for dev', () => {
+  describe('setupSwaggerLocal()', () => {
+    test('should setup swagger for local', () => {
       app.get = jest.fn(() => 3000);
 
-      setupSwaggerDev(app);
+      setupSwaggerLocal(app);
 
       expect(fs.readFileSync).toHaveBeenCalled();
       expect(fs.writeFileSync).toHaveBeenCalled();
     });
 
-    test('should setup swagger for qa', () => {
+    test('should setup swagger for heroku', () => {
       app.get = jest.fn(() => 3000);
 
-      setupSwaggerQA(app);
+      setupSwaggerHeroku(app);
 
       expect(fs.readFileSync).toHaveBeenCalled();
       expect(fs.writeFileSync).toHaveBeenCalled();

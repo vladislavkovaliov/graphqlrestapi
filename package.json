@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon ./src/index.js --env qa",
-    "start:dev": "./node_modules/.bin/nodemon ./src/index.js --env dev",
+    "start": "./node_modules/.bin/nodemon ./src/index.js --env heroku",
+    "start:local": "./node_modules/.bin/nodemon ./src/index.js --env local",
+    "start:heroku": "./node_modules/.bin/nodemon ./src/index.js --env heroku",
     "test": "./node_modules/.bin/jest"
   },
   "author": "",
@@ -24,6 +25,7 @@
     "lodash-fp": "^0.10.4",
     "minimist": "^1.2.0",
     "morgan": "1.9.0",
+    "node-fetch": "^1.7.3",
     "nodemon": "1.12.1",
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1",
