@@ -15,6 +15,8 @@ python migration.py local (in dev)
 
 ```
 
+Note: If you got `Failed: error connecting to db server: no reachable servers` just run again script.
+
 For local env
 ```
 npm run start:local
