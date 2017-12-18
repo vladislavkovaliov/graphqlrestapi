@@ -1,6 +1,6 @@
 const graphql = require('graphql');
-const users = require('../../data/users');
-const profiles = require('../../data/profiles');
+const users = require('../../data/users.json');
+const profiles = require('../../data/profiles.json');
 const { UserType, ProfileType } = require('../types');
 const { find } = require('lodash');
 

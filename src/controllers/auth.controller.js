@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const users = require('../data/users');
+const users = require('../data/users.json');
 const { find } = require('lodash');
 const { AUTHENTICATION_ERROR } = require('../errors/errors');
 
