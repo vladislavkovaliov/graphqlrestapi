@@ -1,17 +1,12 @@
 # GrapQL Rest API
 
-Database migraion
-```
-mongoimport --db test-for-migration --collection users --type json --file user.json --jsonArray --host ds161346.mlab.com --port 61346 -u mlabuser -p 123456
-```
-
-Migration by script
+Database migration. Migration by script
 ```
 # To mLab service
 python migration.py mlab 
 
 # To local db
-python migration.py local (in dev)
+python migration.py local
 
 ```
 
