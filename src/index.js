@@ -9,7 +9,8 @@ const {
   setupPassport,
   setupCors,
   setupSwaggerLocal,
-  setupSwaggerHeroku } = require('./middlewares');
+  setupSwaggerHeroku,
+  setupMongoose } = require('./middlewares');
 const rest = require('./routes/rest.router');
 const argv = require('minimist')(process.argv.slice(2));
 const config = require('./config/config');
@@ -63,6 +64,11 @@ switch (argv.env) {
   default:
     break;
 }
+
+/**
+ * Setup mongoose
+ */
+setupMongoose(app, config);
 
 /**
  * Setup routing

@@ -14,28 +14,30 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "1.18.2",
-    "cors": "^2.8.4",
+    "cors": "2.8.4",
     "express": "4.16.2",
     "express-graphql": "0.6.11",
     "express-winston": "2.4.0",
     "fs": "0.0.1-security",
     "graphql": "0.11.7",
-    "jsonwebtoken": "^8.1.0",
+    "jsonwebtoken": "8.1.0",
     "lodash": "4.17.4",
-    "lodash-fp": "^0.10.4",
-    "minimist": "^1.2.0",
+    "lodash-fp": "0.10.4",
+    "minimist": "1.2.0",
+    "mongoose": "4.13.7",
     "morgan": "1.9.0",
-    "node-fetch": "^1.7.3",
+    "node-fetch": "1.7.3",
     "nodemon": "1.12.1",
-    "passport": "^0.4.0",
-    "passport-jwt": "^3.0.1",
-    "swagger": "^0.7.5",
+    "passport": "0.4.0",
+    "passport-jwt": "3.0.1",
+    "ramda": "0.25.0",
+    "swagger": "0.7.5",
     "swagger-ui": "2.1.4",
     "winston": "2.4.0",
-    "yamljs": "^0.3.0"
+    "yamljs": "0.3.0"
   },
   "devDependencies": {
-    "jest": "^21.2.1",
-    "swagger-express": "^1.0.5"
+    "jest": "21.2.1",
+    "swagger-express": "1.0.5"
   }
 }
