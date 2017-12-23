@@ -12,12 +12,14 @@ module.exports = {
     mlab: {
       url: 'ds159676.mlab.com:59676',
       user: 'mlabuser',
-      password: '123456'
+      password: '123456',
+      db: 'graphqlrestapi'
     },
     local: {
-      url: '',
+      url: 'localhost:27017',
       user: '',
-      password: ''
+      password: '',
+      db: 'graphqlrestapi'      
     }
   },
   env: {

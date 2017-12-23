@@ -9,6 +9,8 @@ const users = require('./data/users');
 const { find } = require('lodash');
 const cors = require('cors');
 const fs = require('fs');
+const mongoose = require('mongoose');
+const { Users } = require('./models/users.model');
 
 module.exports = {
     setupMiddlewares: (app) => {
@@ -69,5 +71,31 @@ module.exports = {
       const newData = data.replace('%SOURCE%', '"https://graphqlrestapi.herokuapp.com/swagger/swagger.json"');
 
       fs.writeFileSync(swaggerTarget, newData);
+    },
+    setupMongoose(app, config) {
+      mongoose.Promise = global.Promise;
+
+      const env = app.get('env');
+      const { mongo } = config;
+      const db = mongoose.connection;
+      
+      db.on('error', console.error.bind(console, 'connection error:'));
+      db.once('open', () => {
+        console.log('mmm');
+      });
+
+      switch(env) {
+        case 'heroku':
+          db.openUri(`mongodb://${mongo.mlab.url}/${mongo.local.db}`, {
+            user: mongo.mlab.user,
+            pass: mongo.mlab.password
+          });        
+          break;
+        case 'local': 
+          db.openUri(`mongodb://${mongo.local.url}/${mongo.local.db}`);
+          break;
+        default:
+          break;
+      }
     }
   };
