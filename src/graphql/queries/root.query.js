@@ -6,7 +6,7 @@ const { Users } = require('../../models/users.model');
 const { Profiles } = require('../../models/profiles.model');
 
 const RootQuery = new graphql.GraphQLObjectType({
-  name: 'RootQueryType',
+  name: 'Query',
   fields: {
     user: {
       type: UserType,
