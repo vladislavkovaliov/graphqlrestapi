@@ -1,9 +1,11 @@
 const graphql = require('graphql');
 const profiles = require('../../data/profiles.json');
-const { UserType, ProfileType } = require('../types');
+const { UserType, ProfileType, StoryType } = require('../types');
 const { find } = require('lodash');
 const { Users } = require('../../models/users.model');
 const { Profiles } = require('../../models/profiles.model');
+const { Stories } = require('../../models/stories.model');
+
 
 const RootQuery = new graphql.GraphQLObjectType({
   name: 'Query',
@@ -55,7 +57,32 @@ const RootQuery = new graphql.GraphQLObjectType({
 
         return users; 
       }
-    }
+    },
+    story: {
+      type: StoryType,
+      args: {
+        index: { type: graphql.GraphQLInt }
+      },
+      async resolve(parentValue, args) {
+        try {
+          const stories = await Stories.find();
+          console.log(stories);
+          console.log(42);
+          return find(stories, ['index', args.index]);
+        }
+        catch(err) {
+          console.log(err);
+        }
+      }
+    },
+    stories: {
+      type: new graphql.GraphQLList(StoryType),
+      async resolve(parentValue, args) {
+        const stories = await Stories.find();
+
+        return stories;
+      }
+    },
   }
 });
 

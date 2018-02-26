@@ -24,4 +24,7 @@ module.exports.Profiles = Profiles({
   hireDate: String,
   dateOfBirth: String,
   department: String,
+  stories: [[]],
+  followers: [[]],
+  following: [[]],
 });

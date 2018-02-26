@@ -17,7 +17,11 @@
     "created": "2017/02/07",
     "hireDate": "2017/10/11",
     "dateOfBirth": "1995/11/03",
-    "department": "Support"
+    "department": "Support",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac271362f53ae927b4766",
@@ -37,7 +41,11 @@
     "created": "2016/02/01",
     "hireDate": "2016/06/04",
     "dateOfBirth": "2014/10/11",
-    "department": "Support"
+    "department": "Support",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac271430a7a8e1068e0d5",
@@ -57,7 +65,11 @@
     "created": "2015/04/26",
     "hireDate": "2016/02/12",
     "dateOfBirth": "1997/05/06",
-    "department": "Java"
+    "department": "Java",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac2715b4703616f68e6ba",
@@ -77,7 +89,11 @@
     "created": "2014/02/11",
     "hireDate": "2014/08/18",
     "dateOfBirth": "2005/03/08",
-    "department": "Python"
+    "department": "Python",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac271253e96d13d79a52a",
@@ -97,7 +113,11 @@
     "created": "2014/12/02",
     "hireDate": "2016/07/20",
     "dateOfBirth": "2013/09/13",
-    "department": "Java"
+    "department": "Java",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac2717ab4626acc1dd7fc",
@@ -117,7 +137,11 @@
     "created": "2015/06/08",
     "hireDate": "2015/08/31",
     "dateOfBirth": "1999/03/24",
-    "department": "Python"
+    "department": "Python",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac271624a24652b7f4567",
@@ -137,7 +161,11 @@
     "created": "2013/11/09",
     "hireDate": "2016/06/25",
     "dateOfBirth": "2000/09/30",
-    "department": "C#"
+    "department": "C#",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac271c434d0e8e6aac66d",
@@ -157,7 +185,11 @@
     "created": "2016/01/13",
     "hireDate": "2015/10/25",
     "dateOfBirth": "1997/07/27",
-    "department": "Python"
+    "department": "Python",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac271002caed2677a3f8e",
@@ -177,7 +209,11 @@
     "created": "2014/05/21",
     "hireDate": "2016/03/10",
     "dateOfBirth": "1996/03/13",
-    "department": "Support"
+    "department": "Support",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac2712fe77e5d6ae63701",
@@ -197,7 +233,11 @@
     "created": "2012/08/13",
     "hireDate": "2014/09/27",
     "dateOfBirth": "2007/03/20",
-    "department": "Web"
+    "department": "Web",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac2710e3de8cc69adb45d",
@@ -217,7 +257,11 @@
     "created": "2016/03/16",
     "hireDate": "2017/04/28",
     "dateOfBirth": "2003/08/03",
-    "department": "Python"
+    "department": "Python",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac271ddb9baea7c5deebd",
@@ -237,7 +281,11 @@
     "created": "2012/05/05",
     "hireDate": "2015/08/06",
     "dateOfBirth": "2012/11/27",
-    "department": "Java"
+    "department": "Java",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   },
   {
     "id": "5a0ac2712945b9cfb1b439d3",
@@ -257,6 +305,10 @@
     "created": "2012/01/07",
     "hireDate": "2014/09/10",
     "dateOfBirth": "2002/05/05",
-    "department": "Python"
+    "department": "Python",
+    "stories": [],
+    "followers": [],
+    "following": [],
+    "role": "photographer"
   }
 ]

@@ -19,5 +19,8 @@ module.exports = ProfileInputType = new graphql.GraphQLInputObjectType({
     department: { type: graphql.GraphQLString },
     homeAddress: { type: graphql.GraphQLString },
     phones: { type: new graphql.GraphQLList(graphql.GraphQLString) },
+    stories: { type: new graphql.GraphQLList(graphql.GraphQLString) },
+    followers: { type: new graphql.GraphQLList(graphql.GraphQLString) },
+    following: { type: new graphql.GraphQLList(graphql.GraphQLString) },
   })
 });
