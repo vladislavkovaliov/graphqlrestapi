@@ -1,0 +1,1 @@
+module.exports.deleteProps = (object, names) => names.forEach(name => delete object[name]);

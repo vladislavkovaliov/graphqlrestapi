@@ -13,6 +13,6 @@ module.exports.Stories = Stories({
   picture: String,
   date: String,
   text: String,
-  likes: [[]],
-  comments: [[]],
+  likes: [],
+  comments: [],
 });
