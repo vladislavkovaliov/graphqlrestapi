@@ -7,7 +7,7 @@
     "start": "./node_modules/.bin/nodemon ./src/index.js --env heroku",
     "start:local": "./node_modules/.bin/nodemon ./src/index.js --env local",
     "start:heroku": "./node_modules/.bin/nodemon ./src/index.js --env heroku",
-    "test": "./node_modules/.bin/jest"
+    "test": "./node_modules/.bin/jest --coverage"
   },
   "author": "",
   "license": "ISC",

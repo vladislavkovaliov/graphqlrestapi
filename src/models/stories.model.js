@@ -6,6 +6,7 @@ const Stories = R.compose(
   R.curry(modelGenerator)('stories'),
   schemaGenerator,
 );
+
 module.exports.Stories = Stories({
   id: String,
   index: Number,
@@ -15,4 +16,6 @@ module.exports.Stories = Stories({
   text: String,
   likes: [],
   comments: [],
+  following: [],
+  followers: [],
 });

@@ -296,6 +296,68 @@
         }
       }
     },
+    "/graphql/stories": {
+      "post": {
+        "summary": "Return all stories info",
+        "description": "Return all stories's data by graphql syntax",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Graphql query",
+            "required": "true",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "description": "Grapqhql query"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Stories"
+        ],
+        "responses": {
+          "200": {
+            "description": "An Object",
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Should contain the unique id"
+                },
+                "text": {
+                  "type": "string",
+                  "description": "Should contain a text description"
+                },
+                "picture": {
+                  "type": "string",
+                  "description": "Should contain a image in base64 format"
+                },
+                "date": {
+                  "type": "string",
+                  "description": "21/02/2017"
+                },
+                "phones": {
+                  "type": "string",
+                  "description": "Should contain a phone number in string format"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error401"
+            }
+          }
+        }
+      }
+    },
     "/api/config": {
       "get": {
         "summary": "Test",
