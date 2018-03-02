@@ -27,7 +27,7 @@ MLAB_DB_LOCAL   = "graphqlrestapi"
 ##
 # Define file name that will be table's name
 #
-COLLECTIONS = ["users", "profiles"]
+COLLECTIONS = ["users", "profiles", "stories"]
 
 MIGRATION_CMD       = "mongoimport --db %DATABASE% --collection %COLLECTION% --drop --type json --file src/data/%FILE%.json --jsonArray --host %HOST%:%PORT% -u %USER% -p %PASSWORD%"
 MIGRATION_CMD_LOCAL = "mongoimport --db %DATABASE% --collection %COLLECTION% --drop --type json --file src/data/%FILE%.json --jsonArray --host %HOST%:%PORT%"
