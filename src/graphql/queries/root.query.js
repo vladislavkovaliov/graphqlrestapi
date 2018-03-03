@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 const profiles = require('../../data/profiles.json');
 const { UserType, ProfileType, StoryType } = require('../types');
-const { find } = require('lodash');
+const { find, filter } = require('lodash');
 const { Users } = require('../../models/users.model');
 const { Profiles } = require('../../models/profiles.model');
 const { Stories } = require('../../models/stories.model');
@@ -29,13 +29,13 @@ const RootQuery = new graphql.GraphQLObjectType({
     profile: {
       type: ProfileType,
       args: {
-        index: { type: graphql.GraphQLInt }
+        id: { type: graphql.GraphQLString }
       },
       async resolve(parentValue, args) {
         try {
           const profiles = await Profiles.find();
 
-          return find(profiles, ['index', args.index]);          
+          return find(profiles, ['id', args.id]);
         }
         catch(err) {
           console.log(err);
@@ -61,14 +61,25 @@ const RootQuery = new graphql.GraphQLObjectType({
     story: {
       type: StoryType,
       args: {
-        index: { type: graphql.GraphQLInt }
+        index: { type: graphql.GraphQLInt },
+        id: { type: graphql.GraphQLString },
+        profileId: { type: graphql.GraphQLString }
       },
       async resolve(parentValue, args) {
         try {
           const stories = await Stories.find();
-          console.log(stories);
-          console.log(42);
-          return find(stories, ['index', args.index]);
+
+          if(args.id) {
+            return find(stories, ['id', args.id]);
+          }
+
+          if(args.index) {
+            return find(stories, ['index', args.index]);
+          }
+
+          if(args.profileId) {
+            return find(stories, ['profileId', args.profileId]);
+          }
         }
         catch(err) {
           console.log(err);
@@ -77,10 +88,25 @@ const RootQuery = new graphql.GraphQLObjectType({
     },
     stories: {
       type: new graphql.GraphQLList(StoryType),
+      args: {
+        index: { type: graphql.GraphQLInt },
+        id: { type: graphql.GraphQLString },
+        profileId: { type: graphql.GraphQLString }
+      },
       async resolve(parentValue, args) {
         const stories = await Stories.find();
 
-        return stories;
+        if(args.id) {
+          return stories.filter(s => s.id === args.id);
+        }
+
+        if(args.index) {
+          return stories.filter(s => s.index === args.index);
+        }
+
+        if(args.profileId) {
+          return stories.filter(s => s.profileId === args.profileId);
+        }
       }
     },
   }

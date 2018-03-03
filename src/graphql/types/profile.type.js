@@ -22,5 +22,6 @@ module.exports = UserType = new graphql.GraphQLObjectType({
     stories: { type: new graphql.GraphQLList(graphql.GraphQLString) },
     followers: { type: new graphql.GraphQLList(graphql.GraphQLString) },
     following: { type: new graphql.GraphQLList(graphql.GraphQLString) },
+    role: { type: graphql.GraphQLString },
   })
 });

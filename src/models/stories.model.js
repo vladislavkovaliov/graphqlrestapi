@@ -18,4 +18,5 @@ module.exports.Stories = Stories({
   comments: [],
   following: [],
   followers: [],
+  profileId: String,
 });

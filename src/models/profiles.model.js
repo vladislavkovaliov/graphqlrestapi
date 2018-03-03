@@ -27,4 +27,5 @@ module.exports.Profiles = Profiles({
   stories: [],
   followers: [],
   following: [],
+  role: String,
 });

@@ -11,5 +11,6 @@ module.exports = StoryType = new graphql.GraphQLObjectType({
     text: { type: graphql.GraphQLString },
     likes: { type: new graphql.GraphQLList(graphql.GraphQLString) },
     comments: { type: new graphql.GraphQLList(graphql.GraphQLString) },
+    profileId: { type: graphql.GraphQLString },
   })
 });
