@@ -1,7 +1,6 @@
 const auth = require('./auth.middleware');
 
 const passport = require('passport');
-const { UNAUTHOTIZED } = require('../errors/errors');
 
 jest.mock('passport', () => ({
   authenticate: jest.fn(() => jest.fn()),
@@ -16,8 +15,13 @@ describe('[auth.middleware.js]', () => {
   });
 
   describe('passportAuth()', () => {
+    let passportAuth = null;
+
+    beforeEach(() => {
+      passportAuth = auth[0];
+    });
+
     test('should be called passportAuth with jwt strategy and session', () => {
-      const passportAuth = auth[0];
       passportAuth(null, null, null);
 
       expect(passport.authenticate.mock.calls[0].length).toBe(3);

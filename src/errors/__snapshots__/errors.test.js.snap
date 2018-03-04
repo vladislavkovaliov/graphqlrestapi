@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[errors.js] should authentication error be correctly 1`] = `
+Object {
+  "msg": "Authentication failed. Wrong password.",
+  "statusCode": 401,
+  "success": false,
+}
+`;
+
+exports[`[errors.js] should unauthotized be correctly 1`] = `
+Object {
+  "msg": "Unauthorized.",
+  "statusCode": 403,
+  "success": false,
+}
+`;
