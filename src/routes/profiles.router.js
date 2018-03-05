@@ -8,6 +8,10 @@ router
   .get(profilesController.getProfiles);
 
 router
+  .route('/profiles/:profileId')
+  .delete(profilesController.deleteById);
+
+router
   .route('/profiles')
   .post(profilesController.getProfileData);
 

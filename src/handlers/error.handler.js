@@ -6,10 +6,13 @@ module.exports = (err, req, res, next) => {
     case 403:
       res.status(403).json(err);
       break;
+    case 404:
+      res.status(404).json(err);
+      break;
     default:
       res.status(500).json({
         statusCode: 500,
-        msg: 'Server error...',
+        msg: err.msg || 'Server error...',
         err: err
       });
       break;
