@@ -4,11 +4,7 @@ const StoriesController = require('../controllers/stories.controller');
 const storiesController = StoriesController();
 
 router
-  .route('/stories/following')
-  .post(storiesController.following);
-
-router
-  .route('/stories/followers')
-  .post(storiesController.followers);
+  .route('/stories')
+  .get(storiesController.getStories);
 
 module.exports = router;

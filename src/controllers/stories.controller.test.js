@@ -4,8 +4,8 @@ const { Stories } = require('../models/stories.model');
 const storiesCtr = StoriesController();
 
 jest.mock('../models/stories.model', () => ({
-  Stories: { 
-    findOneAndUpdate: jest.fn(() => {}), 
+  Stories: {
+    find: jest.fn(() => {}),
   },
 }));
 
@@ -31,23 +31,12 @@ describe('[stories.controller.js]', () => {
     };
   });
 
-  describe('following()', () => {
-    test('should findOneAndUpdate() be called', async () => {
-      await storiesCtr.following(req, res);
-  
-      expect(Stories.findOneAndUpdate).toHaveBeenCalled();
-      
-      expect(res.status).toHaveBeenCalled();
-      expect(res.json).toHaveBeenCalled();
-    });
-  });
+  describe('getStories()', () => {
+    test('should find() be called', async () => {
+      await storiesCtr.getStories(req, res);
 
-  describe('followers()', () => {
-    test('should findOneAndUpdate() be called', async () => {
-      await storiesCtr.followers(req, res);
-  
-      expect(Stories.findOneAndUpdate).toHaveBeenCalled();
-      
+      expect(Stories.find).toHaveBeenCalled();
+
       expect(res.status).toHaveBeenCalled();
       expect(res.json).toHaveBeenCalled();
     });

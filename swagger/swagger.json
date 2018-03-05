@@ -210,6 +210,130 @@
         }
       }
     },
+    "/api/profiles": {
+      "get": {
+        "summary": "Return all profiles",
+        "description": "Return all profiles",
+        "parameters": null,
+        "tags": [
+          "Profiles"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array og object",
+            "schema": {
+              "$ref": "#/definitions/Profiles"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/api/profiles/following": {
+      "post": {
+        "summary": "Adds profile's id to following array by profile's id",
+        "description": "Adds profile's id to following array by profile's id",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Profile's id to following array by profile's id",
+            "required": "true",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Profile's id that needs to add"
+                },
+                "profileId": {
+                  "type": "string",
+                  "description": "Profile's id that will be add to array"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Profiles"
+        ],
+        "responses": {
+          "200": {
+            "description": "An Object with message",
+            "schema": {
+              "properties": {
+                "following": {
+                  "type": "string",
+                  "description": "Test"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error401"
+            }
+          }
+        }
+      }
+    },
+    "/api/profiles/followers": {
+      "post": {
+        "summary": "Adds profile's id to followers array by profile's id",
+        "description": "Adds profile's id to followers array by profile's id",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Profile's id to followers array by profile's id",
+            "required": "true",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Profile's id that needs to add"
+                },
+                "profileId": {
+                  "type": "string",
+                  "description": "Profile's id that will be add to array"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Profiles"
+        ],
+        "responses": {
+          "200": {
+            "description": "An Object with message",
+            "schema": {
+              "properties": {
+                "followers": {
+                  "type": "string",
+                  "description": "Test"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error401"
+            }
+          }
+        }
+      }
+    },
     "/graphql/users": {
       "post": {
         "summary": "Return all users info",
@@ -384,6 +508,63 @@
     }
   },
   "definitions": {
+    "Profiles": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Test"
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "description": "Test"
+        },
+        "hireDate": {
+          "type": "string",
+          "description": "Test"
+        },
+        "email": {
+          "type": "string",
+          "description": "Test"
+        },
+        "gender": {
+          "type": "string",
+          "description": "Test"
+        },
+        "department": {
+          "type": "string",
+          "description": "Test"
+        },
+        "homeAddress": {
+          "type": "string",
+          "description": "Test"
+        },
+        "phones": {
+          "type": "string",
+          "description": "Test"
+        },
+        "login": {
+          "type": "string",
+          "description": "Test"
+        },
+        "created": {
+          "type": "string",
+          "description": "Test"
+        },
+        "name": {
+          "type": "string",
+          "description": "Test"
+        },
+        "following": {
+          "type": "string",
+          "description": "Test"
+        },
+        "followers": {
+          "type": "string",
+          "description": "Test"
+        }
+      }
+    },
     "PingPong": {
       "type": "object",
       "properties": {
